@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
 import "swiper/swiper-bundle.min.css";
-import Script from "next/script";
+import ThemeProviderNext from "@/components/ThemeProviderNext";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,19 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="scrollbar-thumb-slate-400 dark:scrollbar-thumb-slate-700 scrollbar-thin dark:bg-black dark:text-white">
-        <Header />
-        <main className="container">{children}</main>
-        <Footer />
-      </body>
-      <Script id="theme" strategy="afterInteractive">
-        {`if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }`}
-      </Script>
-    </html>
+    <ThemeProviderNext>
+      <html lang="en">
+        <body className="scrollbar-thumb-slate-400 dark:scrollbar-thumb-slate-700 scrollbar-thin dark:bg-black dark:text-white">
+          <Header />
+          <main className="container">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeProviderNext>
   );
 }
