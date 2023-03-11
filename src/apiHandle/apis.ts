@@ -1,7 +1,7 @@
 export async function getNowPlaying() {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PRIVATE_API_PATH}/trending/movie/week?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
+      `${process.env.NEXT_PRIVATE_API_PATH}/movie/now_playing?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
       { next: { revalidate: 30 } }
     );
     return res.json();
