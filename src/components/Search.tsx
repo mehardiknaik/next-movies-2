@@ -45,32 +45,21 @@ const Search = () => {
   return (
     <div className="flex flex-[0.5] items-center">
       <div
-        className="
-      border-b-[1.5px] 
-      border-black
-     flex
-      items-center
-      p-1
-      flex-1
-      focus-within:border-slate-900
+        className="border-b-[1.5px] 
+      border-black flex-1 focus-within:border-slate-900
       relative
       mobile:mt-1
       dark:border-white
-      dark:focus-within:border-yellow-100
-      "
+      dark:focus-within:border-yellow-100"
       >
-        <div className="mr-2">
-          <IoIosSearch></IoIosSearch>
-        </div>
+        <IoIosSearch className="absolute h-full self-center" />
         <input
           onInput={getData}
           type="search"
-          className="bg-transparent outline-0 flex-1"
+          className="bg-transparent outline-0 w-full pl-6"
           placeholder="Search..."
           ref={inputRef}
         />
-
-        {/* search result */}
 
         {!!items.length && (
           <div

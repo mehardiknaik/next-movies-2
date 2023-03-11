@@ -4,7 +4,7 @@ import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="p-6 text-center mobile:pb-16">
+    <div className="p-6 text-center">
       <p className="text-sm opacity-[0.7]">
         &#169; {dayjs().format("YYYY")}, All Right Reserved.
       </p>
