@@ -2,10 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
-import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch, IoMdSunny, IoMdMoon } from "react-icons/io";
 import { useTheme } from "@wits/next-themes";
-import { TbSunMoon, TbSun, TbMoon } from "react-icons/tb";
-
+import { MdAutoFixHigh } from "react-icons/md";
 const Search = () => {
   const [items, setItems] = useState([]);
   const searchTimeout = useRef<any>("");
@@ -29,6 +28,29 @@ const Search = () => {
       throw new Error("Failed to fetch data");
     }
   }
+
+  const themeIcon = () => {
+    switch (theme) {
+      case "dark":
+        return (
+          <button className="text-2xl" onClick={() => setTheme("light")}>
+            <IoMdSunny />
+          </button>
+        );
+      case "light":
+        return (
+          <button className="text-2xl" onClick={() => setTheme("system")}>
+            <IoMdMoon />
+          </button>
+        );
+      default:
+        return (
+          <button className="text-2xl" onClick={() => setTheme("dark")}>
+            <MdAutoFixHigh />
+          </button>
+        );
+    }
+  };
 
   const onWindowClick = () => {
     inputRef.current.value = "";
@@ -107,15 +129,7 @@ const Search = () => {
           </div>
         )}
       </div>
-      <button className="text-2xl">
-        {theme === "system" ? (
-          <TbSunMoon onClick={() => setTheme("dark")} />
-        ) : theme === "dark" ? (
-          <TbMoon onClick={() => setTheme("light")} />
-        ) : (
-          <TbSun onClick={() => setTheme("system")} />
-        )}
-      </button>
+      {themeIcon()}
     </div>
   );
 };

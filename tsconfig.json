@@ -34,7 +34,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "D:\\Hardik\\next-movies-2\\.next/types/**/*.ts"
+    "D:\\Hardik\\next-movies-2\\.next/types/**/*.ts",
+    "D:\\Hardik\\Javascript\\next-movies-2\\.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

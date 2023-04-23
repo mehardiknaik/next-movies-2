@@ -6,7 +6,6 @@ import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const TrendingHero = ({ data }: any) => {
-  console.log(data);
 
   return (
     <Swiper
@@ -20,7 +19,7 @@ export const TrendingHero = ({ data }: any) => {
       }}
       navigation
       onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      onSwiper={(swiper) => console.log("swiper")}
     >
       {data.map((e: any) => (
         <SwiperSlide key={e.id}>
@@ -43,7 +42,7 @@ export const TrendingHero = ({ data }: any) => {
             {/* text */}
             <div className="flex ml-12 mobile:ml-1 flex-col gap-3 items-start relative z-10 max-w-[50%] mobile:max-w-[100%]">
               <p className="text-xl line-clamp-1">{e.title}</p>
-              <p className="text-sm line-clamp-3">{e.overview}</p>
+              <p className="text-sm line-clamp-3 opacity-70">{e.overview}</p>
               {/* <button className="px-3 py-1.5 flex items-center gap-3 bg-primary rounded-md">
                 <MdPlayCircleOutline size={18}></MdPlayCircleOutline>
                 <span>Play trailer</span>

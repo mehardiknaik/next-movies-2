@@ -3,16 +3,18 @@ import Link from "next/link";
 import React from "react";
 
 type propsType = {
-  poster_path: string;
+  poster: string;
   title: string;
   id: string;
-  media_type: string;
+  type: string;
+  name: string;
 };
 
-const Card = ({ poster_path, title, id, media_type="movie" }: propsType) => {
+const Card = ({ poster, title, id, type, name }: propsType) => {
+
   return (
     <Link
-      href={`/${media_type}/${id}`}
+      href={`/${type}/${id}`}
       prefetch={false}
       className="group mx-3 my-1.5 cursor-pointer"
     >
@@ -22,20 +24,25 @@ const Card = ({ poster_path, title, id, media_type="movie" }: propsType) => {
         relative
         rounded-lg overflow-hidden
         w-fit
-        hover:opacity-50
+        group-hover:opacity-50
         transition duration-300
+        mb-2
     "
       >
-        {poster_path && (
+        {poster && (
           <Image
-            alt={title}
+            alt={name || title}
             width={150}
             height={230}
-            src={poster_path?`https://image.tmdb.org/t/p/w300${poster_path}`:'/noposter.jpg'}
+            src={
+              poster
+                ? `https://image.tmdb.org/t/p/w300${poster}`
+                : "/noposter.jpg"
+            }
           />
         )}
       </div>
-      <p className="py-1.5 line-clamp-1">{title}</p>
+      <p className="text-sm line-clamp-1 opacity-70 ">{name || title}</p>
     </Link>
   );
 };

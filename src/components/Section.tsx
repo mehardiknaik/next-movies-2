@@ -1,10 +1,19 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "./Card";
 
-const Section = ({ data, title }: { data: []; title: string }) => {
+const Section = ({
+  data,
+  title,
+  type,
+}: {
+  data: [];
+  title: string;
+  type: string;
+}) => {
+  const [swipData, setSwipData] = useState(data);
   return (
     <>
       <h1 className="text-xl pt-2">{title}</h1>
@@ -15,6 +24,7 @@ const Section = ({ data, title }: { data: []; title: string }) => {
           delay: 2000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
+          stopOnLastSlide:true
         }}
         breakpoints={{
           // when window width is >= 320px
@@ -38,11 +48,20 @@ const Section = ({ data, title }: { data: []; title: string }) => {
           },
         }}
         onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSwiper={(swiper) => console.log("swiper")}
+        onReachEnd={(e) => {
+          console.log("end", e);
+        }}
       >
-        {data.map((e: any) => (
+        {swipData.map((e: any) => (
           <SwiperSlide key={e.id}>
-            <Card {...e} />
+            <Card
+              title={e?.title}
+              poster={e?.poster_path}
+              id={e?.id}
+              type={type}
+              name={e?.name}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+
 import { TrendingHero } from "@/components/TrendingHero";
 import Section from "@/components/Section";
 import type { Metadata } from "next";
@@ -12,19 +12,29 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const nowPlayingData = getNowPlaying();
-  const popularData = getPopular();
-  const trendingData = getTrending();
-  const [nowPlaying, popular, trending] = await Promise.all([
-    nowPlayingData,
-    popularData,
-    trendingData,
-  ]);
+  const popularData = getPopular("movie");
+  const popularDataTv = getPopular("tv");
+  const trendingData = getTrending("movie");
+  const trendingDataTv = getTrending("tv");
+  const [nowPlaying, popular, trending, popularTv, trendingTv] =
+    await Promise.all([
+      nowPlayingData,
+      popularData,
+      trendingData,
+      popularDataTv,
+      trendingDataTv,
+    ]);
   return (
     <div>
       <TrendingHero data={trending.results} />
-      <Section title="In Theater" data={nowPlaying.results} />
-      {/* <Section title="Tranding" data={trending.results} /> */}
-      <Section title="What's Popular" data={popular.results} />
+      <Section type="movie" title="In Theater" data={nowPlaying.results} />
+      <Section type="tv" title="Tranding On TV" data={trendingTv.results} />
+      <Section type="movie" title="What's Popular" data={popular.results} />
+      <Section
+        type="tv"
+        title="What's Popular On TV"
+        data={popularTv.results}
+      />
     </div>
   );
 }

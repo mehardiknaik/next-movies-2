@@ -9,10 +9,10 @@ export async function getNowPlaying() {
     throw new Error("Failed to fetch data");
   }
 }
-export async function getPopular() {
+export async function getPopular(type:string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PRIVATE_API_PATH}/movie/popular?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
+      `${process.env.NEXT_PRIVATE_API_PATH}/${type}/popular?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
       { next: { revalidate: 30 } }
     );
     return res.json();
@@ -20,10 +20,10 @@ export async function getPopular() {
     throw new Error("Failed to fetch data");
   }
 }
-export async function getTrending() {
+export async function getTrending(type:string) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PRIVATE_API_PATH}/trending/movie/week?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
+      `${process.env.NEXT_PRIVATE_API_PATH}/trending/${type}/week?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
       { next: { revalidate: 30 } }
     );
     return res.json();
