@@ -11,7 +11,6 @@ type propsType = {
 };
 
 const Card = ({ poster, title, id, type, name }: propsType) => {
-
   return (
     <Link
       href={`/${type}/${id}`}
@@ -29,18 +28,16 @@ const Card = ({ poster, title, id, type, name }: propsType) => {
         mb-2
     "
       >
-        {poster && (
-          <Image
-            alt={name || title}
-            width={150}
-            height={230}
-            src={
-              poster
-                ? `https://image.tmdb.org/t/p/w300${poster}`
-                : "/noposter.jpg"
-            }
-          />
-        )}
+        <Image
+          alt={name || title}
+          width={150}
+          height={230}
+          src={
+            poster
+              ? `https://image.tmdb.org/t/p/w300${poster}`
+              : "/noposter.jpg"
+          }
+        />
       </div>
       <p className="text-sm line-clamp-1 opacity-70 ">{name || title}</p>
     </Link>

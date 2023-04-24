@@ -126,6 +126,16 @@ const Search = () => {
                 </Link>
               ))}
             </div>
+            <Link
+              className="block text-center p-2 bg-slate-300  dark:bg-slate-600"
+              //@ts-ignore
+              href={{
+                pathname: "/search",
+                query: { param: encodeURIComponent(inputRef.current.value) },
+              }}
+            >
+              See More
+            </Link>
           </div>
         )}
       </div>

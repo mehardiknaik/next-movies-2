@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { Suspense } from "react";
 import { TrendingHero } from "@/components/TrendingHero";
 import Section from "@/components/Section";
 import type { Metadata } from "next";
@@ -25,6 +25,7 @@ export default async function Home() {
       trendingDataTv,
     ]);
   return (
+
     <div>
       <TrendingHero data={trending.results} />
       <Section type="movie" title="In Theater" data={nowPlaying.results} />

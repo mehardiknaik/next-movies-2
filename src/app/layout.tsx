@@ -4,7 +4,8 @@ import "./globals.css";
 import "swiper/swiper-bundle.min.css";
 import ThemeProviderNext from "@/components/ThemeProviderNext";
 import { Inter } from "next/font/google";
-
+import { Suspense } from "react";
+//@ts-ignore
 import clsx from "clsx";
 const inter = Inter({
   weight: "500",
