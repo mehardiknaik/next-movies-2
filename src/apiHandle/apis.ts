@@ -64,7 +64,6 @@ export async function getTabData(type: string,page:string|number) {
       `${process.env.NEXT_PRIVATE_API_PATH}/discover/${type}?api_key=${process.env.NEXT_PRIVATE_API_KEY}&sort_by=release_date.desc&page=${page}&release_date.lte=${date}&with_original_language=mr%7Chi`,
       { next: { revalidate } }
     );
-    console.log(res)
     if (!res.ok) return undefined;
     return res.json();
   } catch (e) {

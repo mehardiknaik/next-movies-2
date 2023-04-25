@@ -28,7 +28,7 @@ export default function RootLayout({
           )}
         >
           <Header />
-          <main className="container">{children}</main>
+          <main className="container select-none">{children}</main>
           <Footer />
         </body>
       </html>
