@@ -1,8 +1,9 @@
+const revalidate = 43200;
 export async function getNowPlaying() {
   try {
     const res = await fetch(
       `${process.env.NEXT_PRIVATE_API_PATH}/movie/now_playing?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
-      { next: { revalidate: 30 } }
+      { next: { revalidate } }
     );
     return res.json();
   } catch (e) {
@@ -13,7 +14,7 @@ export async function getPopular(type: string) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PRIVATE_API_PATH}/${type}/popular?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
-      { next: { revalidate: 30 } }
+      { next: { revalidate } }
     );
     return res.json();
   } catch (e) {
@@ -24,7 +25,7 @@ export async function getTrending(type: string) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PRIVATE_API_PATH}/trending/${type}/week?api_key=${process.env.NEXT_PRIVATE_API_KEY}&with_original_language=hi|mr`,
-      { next: { revalidate: 30 } }
+      { next: { revalidate } }
     );
     return res.json();
   } catch (e) {
@@ -37,8 +38,7 @@ export async function getTrending(type: string) {
 export async function getSearch(params: string, page: string | number) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PRIVATE_API_PATH}/search/multi?api_key=${process.env.NEXT_PRIVATE_API_KEY}&language=en-US&query=${params}&page=${page}`,
-      {cache: 'no-store',}
+      `${process.env.NEXT_PRIVATE_API_PATH}/search/multi?api_key=${process.env.NEXT_PRIVATE_API_KEY}&language=en-US&query=${params}&page=${page}`
     );
     return res.json();
   } catch (e) {
