@@ -1,6 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { BsSuitHeartFill, BsSuitHeart,BsFillStarFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
         </span>
         for
         <span>
-          <BsSuitHeartFill className="text-red-600 dark:text-red-500 animate-heart-beat" />
+          <BsFillStarFill className="text-yellow-500 dark:text-gold-400 animate-heart-beat" />
         </span>
       </p>
     </div>

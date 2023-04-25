@@ -19,7 +19,7 @@ const Header = () => (
         gap-6
         "
         >
-          <Link prefetch={false} href={"/movies"}>Movies</Link>
+          <Link prefetch={false} href={"/movie"}>Movie</Link>
           <Link prefetch={false} href={"/tv"}>TV</Link>
         </div>
       </div>

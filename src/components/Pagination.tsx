@@ -28,22 +28,32 @@ const Pagination = ({ page, total_pages }: any) => {
 
   return (
     <div className="space-x-2 flex mobile:overflow-auto mobile:flex-nowrap flex-wrap">
-      {pages.map((p) => (
-        <Link
-        key={p}
-          href={pathname + "?" + createQueryString("page", p.toString())}
-          prefetch={false}
-          replace
-          className={clsx(
-            "py-1 px-2  rounded-md",
-            page == p
-              ? "dark:bg-slate-600 bg-slate-400"
-              : "bg-slate-100 dark:bg-slate-900"
-          )}
-        >
-          {p}
-        </Link>
-      ))}
+      <Link
+        href={pathname + "?" + createQueryString("page", "1")}
+        prefetch={false}
+        replace
+        className={clsx(
+          "py-1 px-2  rounded-md",
+          page == 1
+            ? "dark:bg-slate-600 bg-slate-400"
+            : "bg-slate-100 dark:bg-slate-900"
+        )}
+      >
+        1
+      </Link>
+      <Link
+        href={pathname + "?" + createQueryString("page", "2")}
+        prefetch={false}
+        replace
+        className={clsx(
+          "py-1 px-2  rounded-md",
+          page == 2
+            ? "dark:bg-slate-600 bg-slate-400"
+            : "bg-slate-100 dark:bg-slate-900"
+        )}
+      >
+        2
+      </Link>
     </div>
   );
 };

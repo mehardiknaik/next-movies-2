@@ -59,7 +59,7 @@ const Detail = ({
           <li className="text-base">
             {dayjs(first_air_date || release_date).format("DD MMM YYYY")}
           </li>
-          {runtime && (
+          {!!runtime && (
             <li className="text-base">
               {dayjs
                 .duration(runtime, "minutes")
