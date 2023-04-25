@@ -9,7 +9,8 @@ export async function generateMetadata({
   searchParams: { param },
 }: any): Promise<Metadata> {
   return {
-    title: `search-${decodeURIComponent(param)}`,
+    title: `search: ${decodeURIComponent(param)}`,
+    description: "this is movies app developed by Hardik Naik",
   };
 }
 

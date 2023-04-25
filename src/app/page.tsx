@@ -26,7 +26,7 @@ export default async function Home() {
     ]);
   return (
 
-    <div>
+    <div className="select-none">
       <TrendingHero data={trending.results} />
       <Section type="movie" title="In Theater" data={nowPlaying.results} />
       <Section type="tv" title="Tranding On TV" data={trendingTv.results} />

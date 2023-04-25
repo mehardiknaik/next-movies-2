@@ -95,7 +95,7 @@ const Search = () => {
             shadow-lg
         "
           >
-            <div className="max-h-[480px] overflow-y-auto scrollbar-thumb-slate-400 dark:scrollbar-thumb-slate-700 scrollbar-thin pr-3">
+            <div className="max-h-[400px] overflow-y-auto scrollbar-thumb-slate-400 dark:scrollbar-thumb-slate-700 scrollbar-thin pr-3">
               {items.map((film: any) => (
                 <Link
                   href={`/${film.media_type}/${film.id}`}
