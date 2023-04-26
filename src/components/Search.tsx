@@ -65,12 +65,13 @@ const Search = () => {
     };
   }, []);
   return (
-    <div className="flex flex-[0.5] items-center">
+    <div className="flex flex-[0.5] items-center gap-3 relative">
       <div
         className="border-b-[1.5px] 
       border-black flex-1 focus-within:border-slate-900
       relative
       mobile:mt-1
+      mobile:static
       dark:border-white
       dark:focus-within:border-yellow-100"
       >
@@ -87,7 +88,7 @@ const Search = () => {
           <div
             className="
             absolute
-            top-[48px]
+            top-8
             left-0
             right-0
             rounded-md

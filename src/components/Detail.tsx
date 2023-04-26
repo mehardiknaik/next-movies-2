@@ -41,7 +41,7 @@ const Detail = ({
       />
       <div className="px-3 flex flex-col items-start gap-3">
         <p className="text-xl line-clamp-1">{title}</p>
-        <ul className="flex items-center gap-3 w-full overflow-x-auto">
+        <ul className="flex items-center gap-3 w-full overflow-x-auto whitespace-nowrap pb-3">
           {genres?.map(({ name, id }: any) => (
             <li
               key={id}

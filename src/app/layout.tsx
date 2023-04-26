@@ -27,6 +27,7 @@ export default function RootLayout({
             "scrollbar-thumb-slate-400 dark:scrollbar-thumb-slate-700 scrollbar-thin dark:bg-black dark:text-white"
           )}
         >
+          <div className="bg-gradient-to-b grad-color fixed top-0 w-full h-[80vh] opacity-50" />
           <Header />
           <main className="container select-none">{children}</main>
           <Footer />

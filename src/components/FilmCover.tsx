@@ -10,7 +10,7 @@ const FilmCover = ({ src }: { src: string }) => {
         alt={`cover`}
         width={800}
         height={300}
-        className="rounded-sm bg-primary h-full w-full"
+        className="rounded-sm bg-gradient-to-b grad-color h-full w-full"
       />
     </div>
   );

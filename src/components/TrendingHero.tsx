@@ -36,7 +36,7 @@ export const TrendingHero = ({ data }: any) => {
                 alt="ad"
                 width={800}
                 height={800}
-                className="rounded-sm bg-primary h-full w-full"
+                className="rounded-sm bg-gradient-to-b grad-color h-full w-full"
               />
             </div>
             {/* text */}
