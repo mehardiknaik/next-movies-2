@@ -110,7 +110,7 @@ const Search = () => {
                     height={72}
                     src={
                       film.poster_path
-                        ? `https://image.tmdb.org/t/p/w300${film.poster_path}`
+                        ? `https://image.tmdb.org/t/p/w154${film.poster_path}`
                         : "/noposter.jpg"
                     }
                     className="h-[72px] min-w-[102px] w-[102px] rounded-md bg-primary"

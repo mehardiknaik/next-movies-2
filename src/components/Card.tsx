@@ -17,25 +17,16 @@ const Card = ({ poster, title, id, type, name }: propsType) => {
       prefetch={false}
       className="group mx-3 my-1.5 cursor-pointer"
     >
-      <div
-        className="
-        h-[200px]
-        relative
-        rounded-lg overflow-hidden
-        w-fit
-        group-hover:opacity-50
-        transition duration-300
-        mb-2
-    "
-      >
+      <div className="h-[200px] relative  w-fit group-hover:opacity-50 transition duration-300 mb-2">
         <Image
           alt={name || title}
           draggable="false"
           width={150}
-          height={230}
+          height={200}
+          className="h-full rounded-lg"
           src={
             poster
-              ? `https://image.tmdb.org/t/p/w300${poster}`
+              ? `https://image.tmdb.org/t/p/w154${poster}`
               : "/noposter.jpg"
           }
         />

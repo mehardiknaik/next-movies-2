@@ -53,7 +53,7 @@ export default function Credit({ data, title }: proptype) {
               className="h-[150px] rounded-full w-[150px] mb-2"
               src={
                 e?.profile_path
-                  ? `https://image.tmdb.org/t/p/w300${e?.profile_path}`
+                  ? `https://image.tmdb.org/t/p/w154${e?.profile_path}`
                   : "/noposter.jpg"
               }
             />
