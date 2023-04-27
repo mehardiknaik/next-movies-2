@@ -1,9 +1,7 @@
 "use client";
-import Link from "next/link";
 import React from "react";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Card from "./Card";
 import Image from "next/image";
 
 type proptype = {
@@ -45,7 +43,7 @@ export default function Credit({ data, title }: proptype) {
           console.log("end", e);
         }}
       >
-        {data.map((e: any) => (
+        {data.slice(0,20).map((e: any) => (
           <SwiperSlide className="text-center" key={e.id}>
             <Image
               alt={e.id}
