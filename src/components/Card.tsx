@@ -30,6 +30,7 @@ const Card = ({ poster, title, id, type, name }: propsType) => {
       >
         <Image
           alt={name || title}
+          draggable="false"
           width={150}
           height={230}
           src={

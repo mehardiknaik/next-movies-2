@@ -1,4 +1,5 @@
 import { getDetailData } from "@/apiHandle/apis";
+import Credit from "@/components/Credit";
 import Detail from "@/components/Detail";
 import FilmCover from "@/components/FilmCover";
 import Section from "@/components/Section";
@@ -23,7 +24,7 @@ export async function generateMetadata({
     ? `https://image.tmdb.org/t/p/w200${data.poster_path}`
     : "/favicon.ico";
   return {
-    title: data.title,
+    title: data.name || data.title,
     description: data.overview,
 
     icons: {
@@ -48,7 +49,12 @@ export default async function Pages({ params: { slug, type } }: any) {
       <FilmCover src={data.backdrop_path} />
       {/* poster and text */}
       <Detail {...data} />
-      {/* <div>{JSON.stringify(data)}</div> */}
+      {data?.credits?.cast && (
+        <Credit data={data?.credits?.cast} title="Cast" />
+      )}
+      {data?.credits?.cast && (
+        <Credit data={data?.credits?.crew} title="Crew" />
+      )}
     </>
   );
 }
