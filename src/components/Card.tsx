@@ -17,12 +17,12 @@ const Card = ({ poster, title, id, type, name }: propsType) => {
       prefetch={false}
       className="group mx-3 my-1.5 cursor-pointer"
     >
-      <div className="h-[200px] relative  w-fit group-hover:opacity-50 transition duration-300 mb-2">
+      <div className="h-[231px] relative  w-fit group-hover:opacity-50 transition duration-300 mb-2">
         <Image
           alt={name || title}
           draggable="false"
-          width={150}
-          height={200}
+          width={154}
+          height={231}
           className="h-full rounded-lg"
           src={
             poster

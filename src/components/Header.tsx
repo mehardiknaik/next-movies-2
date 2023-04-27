@@ -13,7 +13,7 @@ const Header = () => {
         {/* brand & menu */}
         <div className="flex items-center gap-6">
           {/* brand */}
-          <Link href={"/"}>
+          <Link aria-label="home" href={"/"}>
             <RiMovie2Line size={30} />
           </Link>
           {/*  menu */}
@@ -31,7 +31,7 @@ const Header = () => {
               className={
                 path == "/movie"
                   ? "border-b-2 border-purple-800 dark:border-purple-400"
-                  : ""
+                  : "transition-all hover:scale-110"
               }
             >
               Movie
@@ -42,7 +42,7 @@ const Header = () => {
               className={
                 path == "/tv"
                   ? "border-b-2 border-purple-800 dark:border-purple-400"
-                  : ""
+                  : "transition-all hover:scale-110"
               }
             >
               TV

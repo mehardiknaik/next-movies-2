@@ -33,19 +33,19 @@ const Search = () => {
     switch (theme) {
       case "dark":
         return (
-          <button className="text-2xl" onClick={() => setTheme("light")}>
+          <button title="light" className="text-2xl" onClick={() => setTheme("light")}>
             <IoMdSunny />
           </button>
         );
       case "light":
         return (
-          <button className="text-2xl" onClick={() => setTheme("system")}>
+          <button title="auto" className="text-2xl" onClick={() => setTheme("system")}>
             <IoMdMoon />
           </button>
         );
       default:
         return (
-          <button className="text-2xl" onClick={() => setTheme("dark")}>
+          <button title="dark" className="text-2xl" onClick={() => setTheme("dark")}>
             <MdAutoFixHigh />
           </button>
         );
@@ -92,7 +92,7 @@ const Search = () => {
             left-0
             right-0
             rounded-md
-            bg-slate-100 dark:bg-gray-900
+            bg-slate-100 dark:bg-slate-900
             shadow-lg
         "
           >
