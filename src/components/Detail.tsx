@@ -75,7 +75,7 @@ const Detail: FC<propType> = ({
         <ul className="flex gap-3 items-center">
           {production_companies?.map((cop: any) =>
             cop?.logo_path ? (
-              <li title={cop?.name}>
+              <li title={cop?.name} key={cop?.name}>
                 <Image
                   alt={cop?.name}
                   draggable="false"
